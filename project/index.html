@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淘宝商品管理系统</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="libs/jquery/jquery-3.4.0.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/tools.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-inverse">
+    <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">淘宝商品管理</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">其他页面</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" id="unlogin-ul">
+        <li><a href="html/login.html">登录</a></li>
+        <li><a href="html/register.html">注册</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right hidden" id="login-ul">
+        <li><a href="javascript:;">欢迎你 <span id="username"></span></a></li>
+        <li><a href="javascript:;">退出</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <button type="button" class="btn btn-primary btn-add" data-toggle="modal" data-target="#addModal">商品入库</button>
+    <table class="table table-bordered table-hover table-list table-striped">
+        <thead>
+           <tr>
+               <th>编号</th>
+               <th>名称</th>
+               <th>价格</th>
+               <th>库存</th>
+               <th>编辑</th>
+           </tr>
+        </thead>
+        <tbody id="tbody">
+            <!-- <tr>
+                <td>1</td>
+                <td>电脑</td>
+                <td>
+                    <span>6000</span>
+                    <input type="text">
+                </td>
+                <td>
+                    <span>200</span>
+                    <input type="text">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-info btn-xs btn-edit">编辑</button>
+                    <button type="button" class="btn btn-danger btn-xs btn-del">删除</button>
+                    <button type="button" class="btn btn-warning btn-xs btn-ok">确定</button>
+                    <button type="button" class="btn btn-success btn-xs btn-cancel">取消</button>
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation">
+      <ul class="pagination" id="page-container">
+        <li>
+          <a href="#" aria-label="Previous" class="prev-page">
+            <span aria-hidden="true" class="prev-page">&laquo;</span>
+          </a>
+        </li>
+        <!-- <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li> -->
+        <li  id="next-page">
+          <a href="#" aria-label="Next" class="next-page">
+            <span aria-hidden="true" class="next-page">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">添加商品</h4>
+          </div>
+          <div class="modal-body">
+              <form class="form-horizontal">
+                      <div class="form-group">
+                          <label for="inputName" class="col-sm-2 control-label">商品名称</label>
+                          <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputName" placeholder="请添加商品名称">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputPrice" class="col-sm-2 control-label">商品价格</label>
+                          <div class="col-sm-10">
+                          <input type="number" class="form-control" id="inputPrice" placeholder="请添加商品价格">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputNum" class="col-sm-2 control-label">商品数量</label>
+                          <div class="col-sm-10">
+                          <input type="number" class="form-control" id="inputNum" placeholder="请添加商品数量">
+                          </div>
+                      </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" id="btn-shop-add">添加</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <script src="js/pagination.js"></script>
+  <script src="js/select.js"></script>
+  <script src="js/EditTable.js"></script>
+  <script src = "js/addShop.js"></script>
+  <script src="js/isLogin.js"></script>
+</body>
+</html>
